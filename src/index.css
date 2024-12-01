@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* src/index.css */
+.btn-custom-hover {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-custom-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s;
+  }
+  
+  .btn-custom-hover:hover::before {
+    left: 100%;
+  }
+
+  /* src/index.css */
+.animated-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.animated-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+}
+
+.animated-btn:hover::before {
+  left: 100%;
+}
+
+.animated-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+/* Dark Theme Hover Gradient */
+.hover-gradient-text-dark {
+  position: relative;
+  background: linear-gradient(to right, hsl(0, 0%, 88%), #23b92b, #1e9b28); /* Light gray to green gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.5s ease;
+  background-size: 200%;
+}
+
+.hover-gradient-text-dark:hover {
+  background-position: right;
+}
+
+/* Light Theme Hover Gradient */
+.hover-gradient-text-light {
+  position: relative;
+  background: linear-gradient(to right, #3b82f6, #0ea5e9, #0284c7); /* Blue gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.5s ease;
+  background-size: 200%;
+}
+
+.hover-gradient-text-light:hover {
+  background-position: right;
+}
+
+/* Corporate Theme Hover Gradient */
+.hover-gradient-text-corporate {
+  position: relative;
+  background: linear-gradient(to right, #ff8c00, #f9a825, #ffc107); /* Orange to yellow gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.5s ease;
+  background-size: 200%;
+}
+
+.hover-gradient-text-corporate:hover {
+  background-position: right;
+}
+
+
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+button {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse-hover:hover {
+  animation: pulse 0.6s infinite;
+}
+
+
